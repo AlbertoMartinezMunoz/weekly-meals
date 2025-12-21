@@ -27,3 +27,60 @@ Message delivery is handled by a dedicated Message Sender container, which encap
 ![Image cannot be displayed](../c4/2-c4-container.svg "Meal Planning Application - Container Diagram")
 
 This diagram shows the high-level runtime containers that make up the Meal Planner application, including the web frontend, backend services, persistence layer, and messaging integration, as well as their interactions with users and external systems
+
+Below is a **Component Design** section you can drop directly into your system design document.
+It follows naturally from the **C4 Container diagram** and stays at the right level of detail for a design doc (clear responsibilities, interfaces, and boundaries—without turning into code).
+
+## Component Design
+
+### Overview
+
+This section describes the internal components of the Meal Planner application and how responsibilities are distributed within each container. The goal of this decomposition is to keep the system modular, testable, and easy to evolve, while clearly separating user interface concerns, business logic, persistence, and external integrations.
+
+The component design focuses primarily on the **Backend Application**, as it contains the core business logic of the system.
+
+### Web Frontend
+
+The Web Frontend is responsible for user interaction and presentation. It does not contain business logic beyond basic input validation.
+
+### Backend Application
+
+The Backend Application contains the core business logic and orchestration of the system.
+
+### Database
+
+The Database is the persistence layer.
+
+### Message Sender
+
+The Message Sender container encapsulates all messaging-related logic and external dependencies.
+
+**Main components:**
+
+* **Message Formatter**
+
+  * Converts a weekly meal plan into a human-readable message
+* **Messaging Client**
+
+  * Handles communication with the external messaging API (e.g., WhatsApp)
+* **Retry & Error Handler**
+
+  * Manages retries, failures, and logging of delivery issues
+
+**Responsibilities:**
+
+* Format messages consistently
+* Handle external API communication
+* Provide resilience against transient failures
+
+### Component Interaction Summary
+
+At a high level, component interactions follow this flow:
+
+1. The user submits a weekly meal plan via the Web Frontend.
+2. The API Layer receives and validates the request.
+3. The Domain Layer applies business rules and stores the plan via the Persistence Layer.
+4. The Notification Service triggers message delivery.
+5. The Message Sender formats and sends the plan using the external messaging service.
+6. Delivery status is stored for tracking and troubleshooting.
+
