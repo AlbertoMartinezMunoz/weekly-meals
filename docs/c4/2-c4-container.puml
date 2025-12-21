@@ -1,0 +1,47 @@
+@startuml
+!include <C4/C4_Component>
+
+AddRelTag("invisible", $textColor="transparent", $lineColor="transparent", $lineStyle = DashedLine())
+
+title C4 Container Diagram for Weekly Meals Planning Application
+
+
+'----------------------------------------------------------------
+'Actors
+'----------------------------------------------------------------
+Person(planner, "Meal Planner User", "Creates and manages weekly meal plans")
+Person(remoteUsers, "Remote Users", "Receive the weekly meal plan")
+
+
+'----------------------------------------------------------------
+'Systems
+'----------------------------------------------------------------
+System_Ext(whatsappService, "WhatsApp Messaging Service", "External service used to deliver messages")
+
+
+'----------------------------------------------------------------
+'Containers
+'----------------------------------------------------------------
+System_Boundary(mealPlannerSystem, "Meal Planner Web Application") {
+    Container(webUI, "Web Frontend", "HTML / CSS / JavaScript", "Provides a web form to plan weekly meals")
+    Container(apiBackend, "Backend Application", "Python (Flask / FastAPI)", "Handles business logic, validation, and orchestration")
+    Container(database, "Database", "PostgreSQL / SQLite", "Stores meal plans, users, and delivery status")
+    Container(messageSender, "Message Sender", "Python Worker / Service", "Formats and sends meal plans via messaging APIs")
+}
+
+
+'----------------------------------------------------------------
+'Relations
+'----------------------------------------------------------------
+Rel(planner, webUI, "Uses", "HTTPS")
+Rel(webUI, apiBackend, "Submits meal plans", "JSON / HTTPS")
+Rel(apiBackend, database, "Reads/Writes", "SQL")
+Rel(apiBackend, messageSender, "Triggers message delivery", "Internal API / Queue")
+Rel_R(messageSender, whatsappService, "Sends messages", "API / HTTPS")
+Rel_R(whatsappService, remoteUsers, "Delivers messages", "WhatsApp")
+
+Rel_R(database, messageSender, "", "", , , invisible)
+
+SHOW_LEGEND()
+
+@enduml
