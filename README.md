@@ -73,77 +73,29 @@ pip freeze > requirements.txt
 pip uninstall -y -r requirements.txt
 ```
 
-### Python Unitary Testing
+### Plant UML
 
-#### Unittest
+The C4 diagrams are made using [PlantUML](https://plantuml.com/). 
 
-Test file simple template:
-
-```py
-import unittest
-
-class TestSum(unittest.TestCase):
-    def test_sum(self):
-        self.assertEqual(sum([1,2,3]), 6, "Should be 6")
-
-if __name__ == '__main__':
-    unittest.main()
-```
-
-To skip a test `@unittest.skip("<message>")` should be added in the source code before the test we want to skip:
-
-```py
-@unittest.skip("Should be refactored to work")
-def test_to_skip(self):
-```
-
-To run the unit tests in the test root directory:
-
-```shell
-python3 -m unittest
-```
-
-You can select which is the root directory:
-
-```shell
-python3 -m unittest discover <test_directory>
-```
-
-To run the test in this project structure:
-
-```shell
-python -m unittest discover -s ./src/ -p "test_*.py" -v
-```
-
-To select the test of one test suite:
-
-```shell
-python3 -m unittest discover -k <test_suite_name> <project_source_dir>
-```
-
-To call one test case we use the test case name. To only run the test `dataset.utest.dataset_test.TestSuiteNNN.test_xxx` we use `test_xxx`:
+To install the `plantuml` package in linux:
 
 ```console
-$ python -m unittest discover -s ./src/ -p "test_*.py" -v -k "test_xxx"
-test_xxx (dataset.utest.dataset_test.TestSuiteNNN.test_xxx) ... ok
-
-----------------------------------------------------------------------
-Ran 1 test in 0.230s
-
-OK
-
+sudo apt-get update
+sudo apt-get install plantuml
 ```
 
-To run the whole test suite NNN, we use the the test suite name `TestSuiteNNN`:
+
+## Build
+
+### C4 diagrams
+
+To build the diagrams, you only have to run the `plantuml` command:
 
 ```console
-$ python -m unittest discover -s ./src/ -p "test_*.py"  -v -k "TestSuiteNNN"
-test_yyy (dataset.utest.dataset_test.TestSuiteNNN.test_yyy) ... ok
-test_xxx (dataset.utest.dataset_test.TestSuiteNNN.test_xxx) ... ok
-test_zzz (dataset.utest.dataset_test.TestSuiteNNN.test_zzz) ... ok
-
-----------------------------------------------------------------------
-Ran 3 tests in 3.036s
-
-OK
+plantuml -tpng <path-to-the-files>
 ```
+
+## References
+
+- [The C4 model for visualising software architecture](https://c4model.com/)
+- [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML)
