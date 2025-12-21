@@ -1,0 +1,37 @@
+@startuml
+!include <C4/C4_Component>
+
+AddRelTag("invisible", $textColor="transparent", $lineColor="transparent", $lineStyle = DashedLine())
+
+title C4 System Context Diagram for Weekly Meals Planning Application
+
+
+'----------------------------------------------------------------
+'Actors
+'----------------------------------------------------------------
+Person(planner, "Meal Planner", "Creates and manages weekly meal plans")
+Person(recipient, "Remote User", "Receives weekly meal plans")
+
+
+'----------------------------------------------------------------
+'Components
+'----------------------------------------------------------------
+System(meal_planner, "Weekly Meal Planning Application", "Allows users to create weekly meal plans via web form and distribute them to remote users")
+System_Ext(email, "Email Messaging Service", "Sends meal plans to recipients")
+System_Ext(whatsapp, "WhatsApp Messaging Service", "Sends meal plans to recipients")
+
+
+'----------------------------------------------------------------
+'Relations
+'----------------------------------------------------------------
+Rel(planner, meal_planner, "Creates meal plans using", "HTTPS")
+Rel(meal_planner, email, "Sends meal plans via", "SMTP")
+Rel(meal_planner, whatsapp, "Sends meal plans via", "API")
+Rel(email, recipient, "Delivers meal plan to")
+Rel(whatsapp, recipient, "Delivers meal plan to")
+Rel(recipient, meal_planner, "Views meal plans using", "HTTPS")
+
+
+SHOW_LEGEND()
+
+@enduml
