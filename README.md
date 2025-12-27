@@ -66,6 +66,12 @@ You can use the following code to generate a requirements.txt file:
 pip freeze > requirements.txt
 ```
 
+Instead of adding all the dependencies to the `requirements.txt` file, we can append only the packages we need to install without deppendencies:
+
+```sh
+pip freeze | grep "PACKAGE_NAME==" >> requirements.txt
+```
+
 To start intalling libraries again for fresh, you can update the dependencies list and then uninstall all the dependencies:
 
 ```sh
