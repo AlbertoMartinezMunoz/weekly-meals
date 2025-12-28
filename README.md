@@ -180,3 +180,25 @@ Ran 3 tests in 3.036s
 
 OK
 ```
+
+## Run
+
+### Flask
+
+We can use the Flask development server that comes bundled with Flask in order to check that the code in the app.py file is working correctly.
+
+Run the Flask Development Server to serve your Flask app:
+
+```console
+(venv) $ flask --app ./src/webui/app --debug run
+
+ * Running on http://127.0.0.1:5000
+ Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: ***-***-***
+```
+
+The --app argument specifies the Python file (without the .py extension) that contains the Flask application (app). The --debug argument specifies that the Flask Development Server run in 'debug' mode.
+
+As the comment states, you can now view your app by navigating to http://127.0.0.1:5000/ in your browser of choice.
