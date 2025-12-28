@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table>
+  <form method="post">
+    <tr>
+        <th></th>
+        <th>Sábado</th>
+        <th>Domingo</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+    </tr>
+    <tr>
+        <th rowspan="2">Comida</th>
+        <td>
+            <select name="">
+                <option value="judias_verdes">Judias Verdes</option>
+                <option value="lentejas_rape">Lentejas con Rape</option>
+                <option value="ensaladilla">Ensaladilla</option>
+                <option value="paella">Paella</option>
+            </select>
+        </td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+    </tr>
+    <tr>
+        <td>
+            <select name="">
+                <option value="judias_verdes">Judias Verdes</option>
+                <option value="lentejas_rape">Lentejas con Rape</option>
+                <option value="ensaladilla">Ensaladilla</option>
+                <option value="paella">Paella</option>
+            </select>
+        </td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+    </tr>
+    <tr>
+        <th>Cena</th>
+        <td>
+            <select name="">
+                <option value="judias_verdes">Judias Verdes</option>
+                <option value="lentejas_rape">Lentejas con Rape</option>
+                <option value="ensaladilla">Ensaladilla</option>
+                <option value="paella">Paella</option>
+            </select>
+        </td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+        <td><input type="text"/></td>
+    </tr>
+    <tr>
+    <td><input type="submit" value="Generar Plan"></td>
+    </tr>
+  </form>
+</table>
+{% endblock %}
