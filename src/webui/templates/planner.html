@@ -50,13 +50,31 @@
 </table>
 
 <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div>
+<span id="clipboard">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</span>
+</div>
+<button onclick="myFunction()">Copy to clipboard</button>
+{% endif %}
+{% endwith %}
+
+<script>
+function myFunction() {
+  // Get the text field
+  let span = document.getElementById("clipboard");
+  var copyText = span.textContent;
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText);
+  
+  // Alert the copied text
+  alert("Copied the text: " + copyText);
+}
+</script>
 {% endblock %}
