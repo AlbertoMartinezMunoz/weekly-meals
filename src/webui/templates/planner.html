@@ -2,7 +2,8 @@
 
 {% block content %}
 <table>
-  <form method="post">
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
     <tr>
         <th></th>
         <th>Sábado</th>
@@ -15,57 +16,47 @@
     </tr>
     <tr>
         <th rowspan="2">Comida</th>
-        <td>
-            <select name="">
-                <option value="judias_verdes">Judias Verdes</option>
-                <option value="lentejas_rape">Lentejas con Rape</option>
-                <option value="ensaladilla">Ensaladilla</option>
-                <option value="paella">Paella</option>
-            </select>
-        </td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
+        <td>{{ form.saturday_lunch_starter(style="width:180px;")}}</td>
+        <td>{{ form.sunday_lunch_starter(style="width:180px;")}}</td>
+        <td>{{ form.monday_lunch_starter(style="width:180px;")}}</td>
+        <td>{{ form.tuesday_lunch_starter(style="width:180px;")}}</td>
+        <td>{{ form.wednesday_lunch_starter(style="width:180px;")}}</td>
+        <td>{{ form.thursday_lunch_starter(style="width:180px;")}}</td>
+        <td>{{ form.friday_lunch_starter(style="width:180px;")}}</td>
     </tr>
     <tr>
-        <td>
-            <select name="">
-                <option value="judias_verdes">Judias Verdes</option>
-                <option value="lentejas_rape">Lentejas con Rape</option>
-                <option value="ensaladilla">Ensaladilla</option>
-                <option value="paella">Paella</option>
-            </select>
-        </td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
+        <td>{{ form.saturday_lunch_main(style="width:180px;")}}</td>
+        <td>{{ form.sunday_lunch_main(style="width:180px;")}}</td>
+        <td>{{ form.monday_lunch_main(style="width:180px;")}}</td>
+        <td>{{ form.tuesday_lunch_main(style="width:180px;")}}</td>
+        <td>{{ form.wednesday_lunch_main(style="width:180px;")}}</td>
+        <td>{{ form.thursday_lunch_main(style="width:180px;")}}</td>
+        <td>{{ form.friday_lunch_main(style="width:180px;")}}</td>
     </tr>
     <tr>
         <th>Cena</th>
-        <td>
-            <select name="">
-                <option value="judias_verdes">Judias Verdes</option>
-                <option value="lentejas_rape">Lentejas con Rape</option>
-                <option value="ensaladilla">Ensaladilla</option>
-                <option value="paella">Paella</option>
-            </select>
-        </td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
-        <td><input type="text"/></td>
+        <td>{{ form.saturday_dinner(style="width:180px;")}}</td>
+        <td>{{ form.sunday_dinner(style="width:180px;")}}</td>
+        <td>{{ form.monday_dinner(style="width:180px;")}}</td>
+        <td>{{ form.tuesday_dinner(style="width:180px;")}}</td>
+        <td>{{ form.wednesday_dinner(style="width:180px;")}}</td>
+        <td>{{ form.thursday_dinner(style="width:180px;")}}</td>
+        <td>{{ form.friday_dinner(style="width:180px;")}}</td>
     </tr>
     <tr>
-    <td><input type="submit" value="Generar Plan"></td>
+    <td>{{ form.submit()}}</td>
     </tr>
   </form>
 </table>
+
+<hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
 {% endblock %}
