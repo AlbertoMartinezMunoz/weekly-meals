@@ -108,11 +108,94 @@ Restart Apache to apply the changes:
 sudo systemctl restart apache2
 ```
 
-## Firewall Setup
+## HTTPS Setup
+
+To enable the copy to clipboard functions, HTTPS protocol should be enabled.
+
+Configuring OpenSSL SSL for Apache on Ubuntu 22.04 involves creating a self-signed SSL certificate and configuring Apache to use it. Here's a step-by-step guide:
+
+First OpenSSL should be installed (if not already installed). To check if OpenSSl is already installed, run:
+
+```console
+$ openssl version
+OpenSSL 3.0.18 30 Sep 2025 (Library: OpenSSL 3.0.18 30 Sep 2025)
+```
+
+If it's not installed, OpenSSL can be installed using:
 
 ```sh
-sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-sudo iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+sudo apt update
+sudo apt install openssl
+```
+
+Then, for testing or development purposes, a self-signed SSL certificate should be generated. For production use it's advisable to purchase a certificate from a trusted Certificate Authority (CA).
+
+The self-signed certificate and private key will be generated using the openssl:
+
+```sh
+sudo openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+```
+
+This command will create a self-signed certificate valid for 365 days and store the private key and certificate in the specified locations.
+
+After that, Apache shuold be configured to use the SSL certificate. First, a new Apache virtual host configuration file for SSL should be created:
+
+```sh
+sudo nano /etc/apache2/sites-available/weekly-meals-self-signed-ssl.conf
+```
+
+Add the following lines to the configuration file, replacing `your_raspberrypi_ip_or_domain` with your domain name or server's IP address:
+
+```apacheconf
+<VirtualHost *:443>
+    ServerName your_raspberrypi_ip_or_domain
+
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+
+    WSGIDaemonProcess weekly-meals python-home=/var/www/weekly-meals/.venv python-path=/var/www/weekly-meals:/var/www/weekly-meals/src
+    WSGIProcessGroup weekly-meals
+    WSGIScriptAlias / /var/www/weekly-meals/weekly-meals.wsgi
+
+    <Directory /var/www/weekly-meals>
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+Save the file and exit the text editor.
+
+At last, enable the SSL module and the site configuration:
+
+```sh
+sudo a2enmod ssl
+sudo a2ensite weekly-meals-self-signed-ssl.conf
+```
+
+To check everything has been configured properly, run the Apache configuration test:
+
+```console
+$ sudo apachectl configtest
+Syntax OK
+```
+
+Restart Apache to apply the changes:
+
+```sh
+sudo systemctl restart apache2
+```
+
+## Firewall Setup
+
+To enable HTTPS trafic:
+
+```sh
+sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --sport 443 -j ACCEPT
 ```
 
 The rules should be saved from the root account, as root use the `iptables-save` command to save the rules in the file `/etc/iptables/rules.v4`
@@ -125,3 +208,5 @@ sudo iptables-save > /etc/iptables/rules.v4
 ## References
 
 [Build a Python Web Server on Raspberry Pi: Secure HTTPS with Flask](https://websonic.co.uk/blog/build-a-python-web-server-on-raspberry-pi-secure-https-with-flask)
+
+[How to Configure SSL for Apache on Ubuntu 22.04](https://devtutorial.io/how-to-configure-ssl-for-apache-on-ubuntu-22-04-p3165.html)
