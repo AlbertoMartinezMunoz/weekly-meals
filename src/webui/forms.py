@@ -2,14 +2,16 @@ from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField
 
 STARTERS = [('---', '---'), 
-            ('Lentejas con Rape', 'Lentejas con Rape'), 
-            ('Garbanzos con Bakalao', 'Garbanzos con Bakalao'), 
             ('Alubias con Calamar', 'Alubias con Calamar'), 
+            ('Garbanzos con Bakalao', 'Garbanzos con Bakalao'), 
+            ('Lentejas con Rape', 'Lentejas con Rape'), 
             ('Judias Verdes', 'Judias Verdes'),
             ('Cream de Calabacín', 'Cream de Calabacín') ,
             ('Ensaladilla', 'Ensaladilla'),
             ('Pisto con Huevo', 'Pisto con Huevo'),
-            ('Paella','Paella')]
+            ('Paella','Paella'),
+            ('Macarrones con Carne','Macarrones con Carne'),
+            ('Pasta Carbonara','Pasta Carbonara'),]
 
 MAIN_COURSES = [('---', '---'), 
                 ('Filetes de Maza', 'Filetes de Maza'),
@@ -19,7 +21,9 @@ MAIN_COURSES = [('---', '---'),
                 ('Hamburguesa', 'Hamburguesa'),
                 ('Chuleta Cerdo', 'Chuleta Cerdo'),
                 ('Solomillo Cerdo', 'Solomillo Cerdo'),
-                ('Bakalao Vizcaina', 'Bakalao Vizcaina')]
+                ('Carne a la Jardinera', 'Carne a la Jardinera'),
+                ('Bakalao Vizcaina', 'Bakalao Vizcaina'),
+                ('Calamares en su Tinta', 'Calamares en su Tinta')]
 
 DINNER = [('---', '---'), 
           ('Sopa', 'Sopa'), 
@@ -27,6 +31,7 @@ DINNER = [('---', '---'),
           ('Tortilla Patata', 'Tortilla Patata'), 
           ('Bakalao Vizcaina', 'Bakalao Vizcaina'), 
           ('Pescado Rebozado', 'Pescado Rebozado'), 
+          ('Calamares en su Tinta', 'Calamares en su Tinta'), 
           ('Filetes Lomo', 'Filetes Lomo'), 
           ('Pechuga Empanada', 'Pechuga Empanada')]
 
