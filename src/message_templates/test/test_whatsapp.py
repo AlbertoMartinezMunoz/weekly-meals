@@ -41,10 +41,44 @@ expected = """🍽️*PLAN SEMANAL DE COMIDAS Y CENAS*🍽️
 class TestBuilder(unittest.TestCase):
 
     def setUp(self) -> None:
+        self.maxDiff = None
         super().setUp()
 
     def test_given_when_then_(self):
         self.assertEqual(expected, build_whatsapp_meal_plan(json_plan))
+
+    def test_given_meals_plan_dict_when_only_lunch_main_course_then_meal_plan_should_be_generated(self):
+        expected2 = """🍽️*PLAN SEMANAL DE COMIDAS Y CENAS*🍽️
+
+📅*SÁBADO*
+🍴 ---
+🌙 ---
+
+📅*DOMINGO*
+🍴 Filetes de Maza
+🌙 ---
+
+📅*LUNES*
+🍴 ---
+🌙 ---
+
+📅*MARTES*
+🍴 ---
+🌙 ---
+
+📅*MIÉRCOLES*
+🍴 ---
+🌙 ---
+
+📅*JUEVES*
+🍴 ---
+🌙 ---
+
+📅*VIERNES*
+🍴 ---
+🌙 ---"""
+        plan = {'domingo': {'lunch': {'second': 'Filetes de Maza'}}}
+        self.assertEqual(expected2, build_whatsapp_meal_plan(plan))
 
 
 if __name__ == '__main__':
