@@ -36,7 +36,7 @@ def _format_lunch(lunch):
 
         if first and second:
             return f"{first} + {second}"
-        return first or "---"
+        return first or second or "---"
 
     if isinstance(lunch, str):
         return lunch
