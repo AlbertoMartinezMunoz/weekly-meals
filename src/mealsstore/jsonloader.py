@@ -6,7 +6,7 @@ import json
 class JsonLoader(MealsLoader):
 
     def __init__(self, path: str) -> None:
-        with open(path, 'r') as file:
+        with open(path, 'r', encoding='utf-8') as file:
             self.data = json.load(file)
     
     def starters(self) -> List[Tuple[str, str]]:
