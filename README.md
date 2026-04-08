@@ -201,4 +201,4 @@ Run the Flask Development Server to serve your Flask app:
 
 The --app argument specifies the Python file (without the .py extension) that contains the Flask application (app). The --debug argument specifies that the Flask Development Server run in 'debug' mode.
 
-As the comment states, you can now view your app by navigating to http://127.0.0.1:5000/ in your browser of choice.
+You can now view your app by navigating to <http://127.0.0.1:5000/weekly-meals-planner> in your browser of choice.
