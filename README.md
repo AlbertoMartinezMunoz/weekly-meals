@@ -202,3 +202,30 @@ Run the Flask Development Server to serve your Flask app:
 The --app argument specifies the Python file (without the .py extension) that contains the Flask application (app). The --debug argument specifies that the Flask Development Server run in 'debug' mode.
 
 You can now view your app by navigating to <http://127.0.0.1:5000/weekly-meals-planner> in your browser of choice.
+
+## Deployment
+
+### Update Deployment
+
+First go to the project folder published in Apacheand change its ownership and update the files pulling from the remote repo
+
+```bash
+cd /var/www/weekly-meals/
+sudo chown -R pi:pi /var/www/weekly-meals
+git pull
+```
+
+After that, activate the virtual environment and install all the dependences:
+
+```bash
+. .venv/bin/activate
+pip install -r requirements.txt --upgrade
+```
+
+Then, change the apache folder ownership again and restart apache server
+
+```bash
+sudo chown -R www-data:www-data /var/www/weekly-meals
+sudo systemctl restart apache2
+```
+
