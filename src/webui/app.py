@@ -1,7 +1,7 @@
 from flask import Flask, render_template, flash
 from webui.forms import WeeklyPlannerForm
 from message_templates.whatsapp import build_whatsapp_meal_plan
-from mealsstore.jsonloader import JsonLoader
+from mealsstore.jsonloader import JsonFileLoader
 
 import os
 SECRET_KEY = os.urandom(32)
@@ -12,7 +12,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route('/weekly-meals-planner', methods=['GET', 'POST'])
 def index():
-    loader = JsonLoader("meals.json")
+    loader = JsonFileLoader("/var/www/weekly-meals/meals.json")
     starters = loader.starters()
     main_courses = loader.main_courses()
     dinners = loader.dinners()

@@ -3,7 +3,7 @@ from mealsstore.mealsloader import MealsLoader
 
 import json
 
-class JsonLoader(MealsLoader):
+class JsonFileLoader(MealsLoader):
     default_json_file_path = "meals.json"
 
     def __init__(self, path: str) -> None:
