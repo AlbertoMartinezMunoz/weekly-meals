@@ -1,10 +1,10 @@
 from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField
-from mealsstore.jsonloader import JsonLoader
-
+from mealsstore.jsonloader import JsonFileLoader
 
 class WeeklyPlannerForm(FlaskForm):
-    loader = JsonLoader("meals.json")
+    loader = JsonFileLoader("/var/www/weekly-meals/meals.json")
+
     starters = loader.starters()
     main_courses = loader.main_courses()
     dinners = loader.dinners()

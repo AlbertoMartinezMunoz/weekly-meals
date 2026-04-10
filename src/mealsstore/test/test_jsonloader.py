@@ -1,11 +1,11 @@
 import unittest
 
-from mealsstore.jsonloader import JsonLoader
+from mealsstore.jsonloader import JsonFileLoader
 
 class TestJsonLoader(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.loader = JsonLoader("src/mealsstore/test/test.json")
+        self.loader = JsonFileLoader("src/mealsstore/test/test.json")
         super().setUp()
 
     def test_given_json_file_when_retrieving_starters_then_return_list(self):
