@@ -21,12 +21,24 @@
          "Crema de Espinacas"
       ],
       [
+         "Empanada de Cecina",
+         "Empanada de Cecina"
+      ],
+      [
+         "Ensalada de Alubias",
+         "Ensalada de Alubias"
+      ],
+      [
          "Ensalada de Garbanzos",
          "Ensalada de Garbanzos"
       ],
       [
          "Ensalada Griega",
          "Ensalada Griega"
+      ],
+      [
+         "Ensalada de Lentejas",
+         "Ensalada de Lentejas"
       ],
       [
          "Ensaladilla",
@@ -77,6 +89,10 @@
          "Pisto con Huevo"
       ],
       [
+         "Salmorejo",
+         "Salmorejo"
+      ],
+      [
          "Salteado con Pasta",
          "Salteado con Pasta"
       ],
@@ -87,12 +103,20 @@
       [
          "Sopas de Ajo",
          "Sopas de Ajo"
+      ],
+      [
+         "Vichyssoise",
+         "Vichyssoise"
       ]
    ],
    "main_courses":[
       [
          "---",
          "---"
+      ],
+      [
+         "Alitas de Pollo",
+         "Alitas de Pollo"
       ],
       [
          "Bakalao Vizcaina",
@@ -131,6 +155,10 @@
          "Filetes de Cabecero"
       ],
       [
+         "Filetes de Lomo de Cerdo",
+         "Filetes de Lomo de Cerdo"
+      ],
+      [
          "Filetes de Maza",
          "Filetes de Maza"
       ],
@@ -155,18 +183,30 @@
          "Muslos de Pollo Plancha"
       ],
       [
+         "Pinchos de Pollo",
+         "Pinchos de Pollo"
+      ],
+      [
          "Pollo Asado",
          "Pollo Asado"
       ],
       [
          "Solomillo Cerdo",
          "Solomillo Cerdo"
+      ],
+      [
+         "Tortilla Patata",
+         "Tortilla Patata"
       ]
    ],
    "dinners":[
       [
          "---",
          "---"
+      ],
+      [
+         "Alitas de Pollo",
+         "Alitas de Pollo"
       ],
       [
          "Bakalao Vizcaina",
@@ -181,8 +221,8 @@
          "Ensalada"
       ],
       [
-         "Filetes Lomo",
-         "Filetes Lomo"
+         "Filetes de Lomo de Cerdo",
+         "Filetes de Lomo de Cerdo"
       ],
       [
          "Huevos Duros",
