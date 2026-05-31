@@ -5,8 +5,32 @@
          "---"
       ],
       [
+         "Alcachofas con Jamón",
+         "Alcachofas con Jamón"
+      ],
+      [
          "Alubias con Calamar",
          "Alubias con Calamar"
+      ],
+      [
+         "Crema de Calabacín",
+         "Crema de Calabacín"
+      ],
+      [
+         "Crema de Espinacas",
+         "Crema de Espinacas"
+      ],
+      [
+         "Ensalada de Garbanzos",
+         "Ensalada de Garbanzos"
+      ],
+      [
+         "Ensalada Griega",
+         "Ensalada Griega"
+      ],
+      [
+         "Ensaladilla",
+         "Ensaladilla"
       ],
       [
          "Garbanzos con Bakalao",
@@ -25,32 +49,28 @@
          "Garbanzos con Repollo"
       ],
       [
-         "Lentejas con Rape",
-         "Lentejas con Rape"
-      ],
-      [
          "Judías Verdes",
          "Judías Verdes"
       ],
       [
-         "Alcachofas con Jamón",
-         "Alcachofas con Jamón"
+         "Lasaña de Espinacas",
+         "Lasaña de Espinacas"
       ],
       [
-         "Crema de Calabacín",
-         "Crema de Calabacín"
+         "Lentejas con Rape",
+         "Lentejas con Rape"
       ],
       [
-         "Ensala de Garbanzos",
-         "Ensala de Garbanzos"
+         "Macarrones con Carne",
+         "Macarrones con Carne"
       ],
       [
-         "Ensala Griega",
-         "Ensala Griega"
+         "Paella",
+         "Paella"
       ],
       [
-         "Ensaladilla",
-         "Ensaladilla"
+         "Pasta Carbonara",
+         "Pasta Carbonara"
       ],
       [
          "Pisto con Huevo",
@@ -59,26 +79,6 @@
       [
          "Salteado con Pasta",
          "Salteado con Pasta"
-      ],
-      [
-         "Crema de Espinacas",
-         "Crema de Espinacas"
-      ],
-      [
-         "Paella",
-         "Paella"
-      ],
-      [
-         "Macarrones con Carne",
-         "Macarrones con Carne"
-      ],
-      [
-         "Pasta Carbonara",
-         "Pasta Carbonara"
-      ],
-      [
-         "Lasaña de Espinacas",
-         "Lasaña de Espinacas"
       ],
       [
          "Sopa Cocido",
@@ -95,60 +95,78 @@
          "---"
       ],
       [
-         "Filetes de Maza",
-         "Filetes de Maza"
+         "Bakalao Vizcaina",
+         "Bakalao Vizcaina"
       ],
       [
-         "Filetes de Cabecero",
-         "Filetes de Cabecero"
-      ],
-      [
-         "Muslos de Pollo Plancha",
-         "Muslos de Pollo Plancha"
-      ],
-      [
-         "Muslos Pollo Asados",
-         "Muslos Pollo Asados"
-      ],
-      [
-         "Pollo Asado",
-         "Pollo Asado"
-      ],
-      [
-         "Hamburguesa Completa",
-         "Hamburguesa Completa"
-      ],
-      [
-         "Hamburguesa",
-         "Hamburguesa"
-      ],
-      [
-         "Escalopines",
-         "Escalopines"
-      ],
-      [
-         "Costillas BBQ",
-         "Costillas BBQ"
-      ],
-      [
-         "Chuleta Cerdo",
-         "Chuleta Cerdo"
-      ],
-      [
-         "Solomillo Cerdo",
-         "Solomillo Cerdo"
+         "Calamares en su Tinta",
+         "Calamares en su Tinta"
       ],
       [
          "Carne a la Jardinera",
          "Carne a la Jardinera"
       ],
       [
-         "Lacón con Pimientos",
-         "Lacón con Pimientos"
+         "Chuleta Cerdo",
+         "Chuleta Cerdo"
       ],
       [
          "Cocido",
          "Cocido"
+      ],
+      [
+         "Costillas BBQ",
+         "Costillas BBQ"
+      ],
+      [
+         "Empanada de Cecina",
+         "Empanada de Cecina"
+      ],
+      [
+         "Escalopines",
+         "Escalopines"
+      ],
+      [
+         "Filetes de Cabecero",
+         "Filetes de Cabecero"
+      ],
+      [
+         "Filetes de Maza",
+         "Filetes de Maza"
+      ],
+      [
+         "Hamburguesa",
+         "Hamburguesa"
+      ],
+      [
+         "Hamburguesa Completa",
+         "Hamburguesa Completa"
+      ],
+      [
+         "Lacón con Pimientos",
+         "Lacón con Pimientos"
+      ],
+      [
+         "Muslos de Pollo Asados",
+         "Muslos de Pollo Asados"
+      ],
+      [
+         "Muslos de Pollo Plancha",
+         "Muslos de Pollo Plancha"
+      ],
+      [
+         "Pollo Asado",
+         "Pollo Asado"
+      ],
+      [
+         "Solomillo Cerdo",
+         "Solomillo Cerdo"
+      ]
+   ],
+   "dinners":[
+      [
+         "---",
+         "---"
       ],
       [
          "Bakalao Vizcaina",
@@ -159,38 +177,20 @@
          "Calamares en su Tinta"
       ],
       [
-         "Empanada de Cecina",
-         "Empanada de Cecina"
-      ]
-   ],
-   "dinners":[
-      [
-         "---",
-         "---"
-      ],
-      [
-         "Sopa",
-         "Sopa"
-      ],
-      [
          "Ensalada",
          "Ensalada"
       ],
       [
-         "Tortilla Francesa",
-         "Tortilla Francesa"
-      ],
-      [
-         "Tortilla Patata",
-         "Tortilla Patata"
+         "Filetes Lomo",
+         "Filetes Lomo"
       ],
       [
          "Huevos Duros",
          "Huevos Duros"
       ],
       [
-         "Bakalao Vizcaina",
-         "Bakalao Vizcaina"
+         "Pechuga Empanada",
+         "Pechuga Empanada"
       ],
       [
          "Pescado Rebozado",
@@ -201,24 +201,24 @@
          "Salmón Plancha"
       ],
       [
-         "Sushi",
-         "Sushi"
-      ],
-      [
-         "Calamares en su Tinta",
-         "Calamares en su Tinta"
-      ],
-      [
-         "Filetes Lomo",
-         "Filetes Lomo"
-      ],
-      [
          "San Jacobos",
          "San Jacobos"
       ],
       [
-         "Pechuga Empanada",
-         "Pechuga Empanada"
+         "Sopa",
+         "Sopa"
+      ],
+      [
+         "Sushi",
+         "Sushi"
+      ],
+      [
+         "Tortilla Francesa",
+         "Tortilla Francesa"
+      ],
+      [
+         "Tortilla Patata",
+         "Tortilla Patata"
       ]
    ]
 }
