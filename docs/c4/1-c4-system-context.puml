@@ -2,6 +2,8 @@
 !include <C4/C4_Component>
 
 AddRelTag("invisible", $textColor="transparent", $lineColor="transparent", $lineStyle = DashedLine())
+AddRelTag("not implemented", $textColor="lightgray", $lineColor="lightgray", $lineStyle = DashedLine())
+AddElementTag("not implemented", $borderColor="lightgray", $fontColor="white", $bgColor="lightgray")
 
 title C4 System Context Diagram for Weekly Meals Planning Application
 
@@ -16,8 +18,8 @@ Person(recipient, "Remote User", "Receives weekly meal plans")
 '----------------------------------------------------------------
 'Components
 '----------------------------------------------------------------
-System(meal_planner, "Weekly Meal Planning Application", "Allows users to create weekly meal plans via web form and distribute them to remote users")
-System_Ext(email, "Email Messaging Service", "Sends meal plans to recipients")
+System(meal_planner, "Weekly Meal Planning System", "Allows users to create weekly meal plans via web form and distribute them to remote users")
+System_Ext(email, "Email Messaging Service", "Sends meal plans to recipients", $tags="not implemented")
 System_Ext(whatsapp, "WhatsApp Messaging Service", "Sends meal plans to recipients")
 
 
@@ -25,11 +27,13 @@ System_Ext(whatsapp, "WhatsApp Messaging Service", "Sends meal plans to recipien
 'Relations
 '----------------------------------------------------------------
 Rel(planner, meal_planner, "Creates meal plans using", "HTTPS")
-Rel(meal_planner, email, "Sends meal plans via", "SMTP")
-Rel(meal_planner, whatsapp, "Sends meal plans via", "API")
-Rel(email, recipient, "Delivers meal plan to")
+Rel(planner, meal_planner, "Gets meal plans using", "HTTPS")
+Rel(meal_planner, email, "Sends meal plans via", "SMTP", $tags="not implemented")
+Rel(meal_planner, whatsapp, "Sends meal plans via", "API", $tags="not implemented")
+Rel(planner, whatsapp, "Sends meal plans via", "Web")
+Rel(email, recipient, "Delivers meal plan to", $tags="not implemented")
 Rel(whatsapp, recipient, "Delivers meal plan to")
-Rel(recipient, meal_planner, "Views meal plans using", "HTTPS")
+Rel(recipient, meal_planner, "Views meal plans using", "HTTPS", $tags="not implemented")
 
 
 SHOW_LEGEND()
